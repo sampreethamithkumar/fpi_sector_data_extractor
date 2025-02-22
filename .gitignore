@@ -1,0 +1,43 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!script.py
+!Dockerfile
+!README.md
+!requirements.txt
+
+# Even if they are in subdirectories
+!*/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+.env
+.python-version
+Pipfile
+Pipfile.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+output/
+filtered_columns_*.xlsx
+
+# Misc
+.DS_Store
+*.log

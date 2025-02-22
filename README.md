@@ -57,6 +57,34 @@ filtered_columns_FIIInvestSector_Sep302024.xlsx
 
 4. **Saving to Excel**: The filtered data is saved to an Excel file with the specified naming convention.
 
+### Docker Usage
+
+You can also run this script using Docker. Here's how:
+
+1. **Build the Docker image**:
+```bash
+docker build -t fpi-data-extractor .
+```
+
+2. **Run the container**:
+```bash
+docker run -v $(pwd)/output:/app/output fpi-data-extractor <URL>
+```
+
+For example:
+```bash
+docker run -v $(pwd)/output:/app/output fpi-data-extractor https://www.fpi.nsdl.co.in/web/StaticReports/Fortnightly_Sector_wise_FII_Investment_Data/FIIInvestSector_Sep302024.html
+```
+
+The output Excel file will be saved in the `output` directory on your host machine.
+
+### Notes
+- The `-v $(pwd)/output:/app/output` flag creates a volume that maps the `output` directory on your host machine to the `/app/output` directory in the container
+- Make sure to create the `output` directory before running the container:
+  ```bash
+  mkdir -p output
+  ```
+
 ### Note
 
 - Ensure that the URL provided points to a valid webpage containing the desired data.
